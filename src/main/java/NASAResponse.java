@@ -1,6 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class NASAAPI {
+public class NASAResponse {
     private final String copyright;
     private final String date;
     private final String explanation;
@@ -10,9 +10,9 @@ public class NASAAPI {
     private final String title;
     private final String url;
 
-    public NASAAPI(@JsonProperty("copyright") String copyright, @JsonProperty("date") String date, @JsonProperty("explanation") String explanation,
-                   @JsonProperty("hdurl") String hdurl, @JsonProperty("media_type") String mediaType, @JsonProperty("service_version") String serviceVersion,
-                   @JsonProperty("title") String title, @JsonProperty("url") String url) {
+    public NASAResponse(@JsonProperty("copyright") String copyright, @JsonProperty("date") String date, @JsonProperty("explanation") String explanation,
+                        @JsonProperty("hdurl") String hdurl, @JsonProperty("media_type") String mediaType, @JsonProperty("service_version") String serviceVersion,
+                        @JsonProperty("title") String title, @JsonProperty("url") String url) {
         this.copyright = copyright;
         this.date = date;
         this.explanation = explanation;
@@ -57,7 +57,7 @@ public class NASAAPI {
 
     @Override
     public String toString() {
-        return "NASAAPI{" +
+        return "NASAResponse{" +
                 "copyright='" + copyright + '\'' +
                 ", date='" + date + '\'' +
                 ", explanation='" + explanation + '\'' +

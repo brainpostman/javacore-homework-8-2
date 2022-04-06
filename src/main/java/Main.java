@@ -23,7 +23,7 @@ public class Main {
                 .build();
         HttpGet request1 = new HttpGet("https://api.nasa.gov/planetary/apod?api_key=BgBx8G7vo2tjVrBwFeVBBbkqEcFeBOpPDCuwZe6w");
         CloseableHttpResponse response = httpClient.execute(request1);
-        NASAAPI obj = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
+        NASAResponse obj = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {});
         HttpGet request2 = new HttpGet(obj.getUrl());
         String[] name = obj.getUrl().split("/");
         CloseableHttpResponse response2 = httpClient.execute(request2);
